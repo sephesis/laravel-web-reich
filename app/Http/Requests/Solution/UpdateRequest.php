@@ -11,7 +11,7 @@ class UpdateRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,10 @@ class UpdateRequest extends FormRequest
     {
         return [
             'title' => 'required|string',
-            'price' => 'required|float',
-            'active' => 'nullable'
+            'price' => 'required|int',
+            'active' => 'nullable',
+            'img' => 'nullable',
+            'description' => 'nullable'
         ];
     }
 }

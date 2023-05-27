@@ -17,6 +17,15 @@
       <!-- Main content -->
       <section class="content">
         <div class="container-fluid">
+          @if ($errors->any())
+          <div class="alert alert-danger">
+              <ul>
+                  @foreach ($errors->all() as $error)
+                      <li>{{ $error }}</li>
+                  @endforeach
+              </ul>
+          </div>
+      @endif
           <!-- Small boxes (Stat box) -->
           <div class="row">
              <div class="col-md-6">
@@ -34,6 +43,23 @@
                 <div class="form-group">
                     <label class="text-secondary">Цена</label>
                     <input type="number" name="price" placeholder="Цена" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <textarea rows="15" col="10" name="description" placeholder="Описание" class="form-control">
+                    </textarea>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleInputFile">Загрузка файла</label>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="file" name="img" class="custom-file-input" id="exampleInputFile">
+                        <label class="custom-file-label" for="exampleInputFile">Выберите файл</label>
+                      </div>
+                      <div class="input-group-append">
+                        <span class="input-group-text">Загрузка</span>
+                      </div>
+                    </div>
                   </div>
                 <div class="form-group">
                   <input type="submit" value="Сохранить" class="btn btn-primary">

@@ -64,7 +64,7 @@ Route::group(['prefix' => 'admin/solutions'], function() {
     Route::post('/', \App\Http\Controllers\Solution\StoreController::class)->name('solution.store');
     Route::get('/{solution}/edit', \App\Http\Controllers\Solution\EditController::class)->name('solution.edit');
     Route::get('/{solution}', \App\Http\Controllers\Solution\ShowController::class)->name('solution.show');
-    Route::patch('/{solution}/update', \App\Http\Controllers\Solution\UpdateController::class)->name('solution.update');
+    Route::post('/{solution}/update', \App\Http\Controllers\Solution\UpdateController::class)->name('solution.update');
     Route::post('/{solution}/delete', \App\Http\Controllers\Solution\DeleteController::class)->name('solution.delete');
 });
 

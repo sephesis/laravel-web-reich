@@ -10,7 +10,7 @@ class Solution extends Model
     protected $table = 'solutions';
     protected $guarded = false;
 
-    protected $fillable = ['title', 'price', 'active'];
+    protected $fillable = ['title', 'price', 'active', 'description', 'img'];
 
     public function services()
     {

@@ -14,8 +14,8 @@
         @foreach ($solutions as $k => $solution)
         <div class="col-lg-4">
           <div class="service__card card">
-            <img class="service__icon" src="/img/web-design-icon.svg" alt=""/>
-            <div class="service__card-number">0{{$k}}</div>
+            <img class="service__icon" src="{{ asset('storage/' . $solution->img) }}" alt=""/>
+            <div class="service__card-number">0{{$k + 1}}</div>
             <div class="service__card-title">{{ $solution->title }}</div>
           </div>
         </div>
