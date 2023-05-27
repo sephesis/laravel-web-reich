@@ -16,12 +16,21 @@
         <!-- /.content-header -->
         <section class="content">
           <div class="container-fluid">
-            @if (\Session::has('success'))
-            <div class="alert alert-success" role="alert">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
-              <h4><i class="icon fa fa-check"></i>{{ \Session::get('success') }}</h4>
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
             </div>
-            @endif
+        @endif
+        @if (\Session::has('success'))
+        <div class="alert alert-success" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+          <h4><i class="icon fa fa-check"></i>{{ \Session::get('success') }}</h4>
+        </div>
+        @endif
             <div class="row">
                <div class="col-md-6">
                 <form action="{{ route('article.update', $article->id) }}" method="post" enctype="multipart/form-data">
