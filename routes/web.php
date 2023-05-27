@@ -116,6 +116,11 @@ Route::group(['prefix' => 'services'], function(){
     Route::get('/', \App\Http\Controllers\Solution\ListController::class)->name('solution.list');
 });
 
+Route::group(['prefix' => 'contacts'], function(){
+    Route::get('/', \App\Http\Controllers\Contact\ViewController::class)->name('contact.view');
+});
+
+
 Route::post('/contact/submit', \App\Http\Controllers\Form\FormController::class)->name('feedback.send');
 
 

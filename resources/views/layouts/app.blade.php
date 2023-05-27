@@ -23,7 +23,7 @@
             <li class="menu__item"> <a class="menu__item-link" target="_blank" href="{{ route('project.list')}}">Кейсы</a></li>
             <li class="menu__item"> <a class="menu__item-link" target="_blank" href="#">Прайс</a></li>
             <li class="menu__item"> <a class="menu__item-link" target="_blank" href="{{ route('article.list')}}">Статьи</a></li>
-            <li class="menu__item"> <a class="menu__item-link" target="_blank" href="#">Контакты</a></li>
+            <li class="menu__item"> <a class="menu__item-link" target="_blank" href="{{ route('contact.view')}}">Контакты</a></li>
           </ul>
         </div>
       </div>
