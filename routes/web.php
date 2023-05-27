@@ -23,9 +23,6 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
     Route::get('/admin', \App\Http\Controllers\Admin\AdminController::class)->name('admin.index');
 //});
 
-Route::group(['prefix'=> '/'], function(){
-    //Route::get('/', )
-});
 //'middleware' => ['']
 Route::group(['prefix' => 'admin/tags'], function(){
     Route::get('/', \App\Http\Controllers\Tag\IndexController::class)->name('tag.index');
@@ -111,11 +108,13 @@ Route::group(['prefix' => 'articles'], function(){
     Route::get('{slug}', \App\Http\Controllers\Article\ViewController::class)->name('article.view');
 });
 
+Route::group(['prefix' => 'projects'], function(){
+    Route::get('/', \App\Http\Controllers\Project\ListController::class)->name('project.list');
+});
+
 Route::group(['prefix' => 'services'], function(){
     Route::get('/', \App\Http\Controllers\Solution\ListController::class)->name('solution.list');
 });
-
-
 
 Route::post('/contact/submit', \App\Http\Controllers\Form\FormController::class)->name('feedback.send');
 

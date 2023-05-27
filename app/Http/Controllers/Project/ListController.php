@@ -10,6 +10,6 @@ class ListController extends Controller
     //
     public function __invoke()
     {
-        return view('project.view');
+        return view('project.list');
     }
 }
