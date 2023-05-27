@@ -20,10 +20,9 @@
         <div class="col-9">
           <ul class="menu">
             <li class="menu__item"> <a class="menu__item-link" href="{{ route('solution.list')}}">Услуги</a></li>
-            <li class="menu__item"> <a class="menu__item-link" target="_blank" href="#">Кейсы</a></li>
-            <li class="menu__item"> <a class="menu__item-link" target="_blank" href="#">Решения</a></li>
+            <li class="menu__item"> <a class="menu__item-link" target="_blank" href="{{ route('project.list')}}">Кейсы</a></li>
             <li class="menu__item"> <a class="menu__item-link" target="_blank" href="#">Прайс</a></li>
-            <li class="menu__item"> <a class="menu__item-link" target="_blank" href="#">Статьи</a></li>
+            <li class="menu__item"> <a class="menu__item-link" target="_blank" href="{{ route('article.list')}}">Статьи</a></li>
             <li class="menu__item"> <a class="menu__item-link" target="_blank" href="#">Контакты</a></li>
           </ul>
         </div>
