@@ -1,0 +1,34 @@
+@extends('layouts.app')
+
+@section('content')
+<div class="row"> 
+   @foreach ($articles as $article)
+    <div class="col-lg-3 mt-5">
+      <div class="post__card card"><a class="post__card-link" href="{{route('article.view', ['slug' => $article->slug ])}}"> 
+        @if ($article->img)
+        <img class="img-fluid" src="{{ asset('storage/' . $article->img) }}"/>
+        @else
+        <img class="img-fluid" src="{{ asset('site/img/post1.png') }}"/>
+        @endif
+      
+          <div class="post__card-date">{{ $article->formattedDateCreated }}</div>
+          <div class="post__card-title">{{ $article->title }}</div></a></div>
+    </div>
+    @endforeach
+  </div>
+  <div class="row mt-5 d-flex justify-content-center">
+    <div class="col-lg-4">
+      <ul class="pagination">
+        <li class="pagination__item"> <a class="pagination__item-link">
+          <img class="pagination__arrow" src="{{ asset('site/img/arrow_right.svg') }}"/></a></li>
+        <li class="pagination__item"> <a class="pagination__item-link">1</a></li>
+        <li class="pagination__item"><a class="pagination__item-link">2</a></li>
+        <li class="pagination__item"><a class="pagination__item-link">3</a></li>
+        <li class="pagination__item"><a class="pagination__item-link">4</a></li>
+        <li class="pagination__item"> <a class="pagination__item-link">5</a></li>
+        <li class="pagination__item"> <a class="pagination__item-link">
+          <img class="pagination__arrow" src="{{ asset('site/img/arrow_left.svg') }}"/></a></li>
+      </ul>
+    </div>
+  </div>
+@endsection
