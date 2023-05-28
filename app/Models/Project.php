@@ -15,8 +15,8 @@ class Project extends Model
     protected $quarded = false;
 
     protected $fillable = ['title', 'url', 'active', 
-                            'year', 'p_date', 'color', 'solution_id',
-                            'img', 'property_column_size_4', 'property_column_size_8'];
+                            'year', 'p_date', 'color', 'solution_id', 'sort',
+                            'img', 'property_column_size_4', 'property_column_size_8', 'slug'];
 
     public static function getStatuses()
     {
