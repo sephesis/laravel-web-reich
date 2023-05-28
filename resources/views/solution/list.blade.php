@@ -7,7 +7,9 @@
           <li class="breadcrumbs__item breadcrumbs__item-active">Услуги</li>
         </ul>
         <div class="col-lg-12">
-          <h1 class="h1">Lorem Ipsum — взятый с потолка псевдо-латинский набор слов</h1>
+          @if ($pageTitle !== '')
+          <h1 class="h1">{{ $pageTitle }}</h1>
+          @endif
         </div>
       </div>
       <div class="row mt-5">

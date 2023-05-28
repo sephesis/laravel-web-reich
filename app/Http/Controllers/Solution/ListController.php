@@ -4,13 +4,14 @@ namespace App\Http\Controllers\Solution;
 
 use App\Http\Controllers\Controller;
 use App\Models\Solution;
-use Illuminate\Http\Request;
+use App\Resourses\Config;
 
 class ListController extends Controller
 {
     //
     public function __invoke() {
         $solutions = Solution::all();
-        return view('solution.list', compact('solutions'));
+        $pageTitle = Config::getCurrentTitle();
+        return view('solution.list', compact('solutions', 'pageTitle'));
     }
 }
