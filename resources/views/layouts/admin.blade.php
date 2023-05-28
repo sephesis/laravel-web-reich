@@ -260,7 +260,7 @@
                 <a href="{{ route('service.index') }}" class="nav-link">
                   <i class="nav-icon far fa-circle"></i>
                   <p>
-                   Услуги
+                   Виды услуг
                   </p>
                 </a>
               </li>
@@ -279,15 +279,6 @@
               <i class="nav-icon fa fa-archive"></i>
               <p>
                 Проекты
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="" class="nav-link">
-              <i class="nav-icon fa fa-braille"></i>
-              <p>
-                Услуги
               </p>
             </a>
           </li>
@@ -331,6 +322,12 @@
                 <a href="" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Настройки бота</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('title.edit') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Настройки заголовков</p>
                 </a>
               </li>
             </ul>

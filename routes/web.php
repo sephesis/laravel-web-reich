@@ -102,6 +102,11 @@ Route::group(['prefix' => 'admin/groups'], function(){
     Route::post('/{technology-group}/delete', \App\Http\Controllers\TechnologyGroup\DeleteController::class)->name('group.delete');
 });
 
+Route::group(['prefix' => 'admin/titles'], function(){
+    Route::get('/edit', \App\Http\Controllers\Title\EditController::class)->name('title.edit');
+    Route::post('/update', \App\Http\Controllers\Title\UpdateController::class)->name('title.update');
+});
+
 
 Route::group(['prefix' => 'articles'], function(){
     Route::get('/', \App\Http\Controllers\Article\ListController::class)->name('article.list');

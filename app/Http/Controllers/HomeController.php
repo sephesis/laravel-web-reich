@@ -7,7 +7,7 @@ use App\Models\Solution;
 use App\Models\Technology;
 use App\Models\Project;
 use App\Models\TechnologyGroup;
-use App\Resourses\Config;
+use App\Resourses\PageHelper;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -33,7 +33,7 @@ class HomeController extends Controller
         $articles = Article::where('active', '=', 1)->get();
         $solutions = Solution::all();
         $projects = Project::orderBy('sort', 'asc')->where('active', '=', 1)->get();
-        $pageTitle = Config::getCurrentTitle();
+        $pageTitle = PageHelper::getCurrentTitle();
         return view('front.index', compact('groups', 'articles', 'solutions', 'projects', 'pageTitle'));
     }
 }
