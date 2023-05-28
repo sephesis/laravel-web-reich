@@ -1,6 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="row">
+  <ul class="breadcrumbs">
+    <li class="breadcrumbs__item"> <a class="breadcrumbs__link" href="">Главная</a></li>
+    <li class="breadcrumbs__item breadcrumbs__item-active">Статьи</li>
+  </ul>
+  <div class="col-lg-4">
+    <h1 class="h1"> {{ $pageTitle }}</h1>
+  </div>
+</div>
 <div class="row"> 
    @foreach ($articles as $article)
     <div class="col-lg-3 mt-5">

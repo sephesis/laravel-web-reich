@@ -4,7 +4,7 @@
     <div class="col-lg-6">
       <div class="header__banner">
         <div class="header__pretext">#design&nbsp;#code </div>
-        <h1 class="h1">Разработка и&nbsp;дизайн&nbsp;сайтов</h1>
+        <h1 class="h1">{{ $pageTitle }}</h1>
         <div class="header__features"> 
           <ul class="header__features-list">
             <li class="header__features-list__item">Дизайн</li>

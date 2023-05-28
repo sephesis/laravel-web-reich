@@ -9,6 +9,7 @@ use App\Http\Requests\Article\UpdateRequest;
 use App\Models\Article;
 use App\Models\ArticleTag;
 use App\Http\Filters\ArticleFilter;
+use App\Resourses\Config;
 
 class ListController extends Controller
 {
@@ -21,6 +22,8 @@ class ListController extends Controller
 
         $articles = Article::filter($filter)->get();
 
-        return view('article.list', compact('articles'));
+        $pageTitle = Config::getCurrentTitle();
+
+        return view('article.list', compact('articles', 'pageTitle'));
      }
 }

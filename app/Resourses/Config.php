@@ -13,7 +13,7 @@ class Config
     {
         $json = File::json(base_path(self::TITLE_MAP_PATH));
         $routePrefix = Route::current()->getPrefix();
-        $pageTitle = array_key_exists($routePrefix, $json) ? $json[$routePrefix] : '';
+        $pageTitle = array_key_exists($routePrefix, $json) ? $json[$routePrefix] : 'Разработка и дизайн сайтов';
         return $pageTitle;
     }
 }
