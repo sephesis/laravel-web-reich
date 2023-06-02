@@ -20,36 +20,42 @@
         </div>
     </div>
     <div class="row">
-        {{-- <div class="col-lg-4 mt-4">
-            <div class="project_divider"></div>
-        </div> --}}
+        @php $counter = 0;
+        @endphp
         @foreach ($projects as $k => $project)
-
-         @if ($k === 0 || $k === 4)
+         @if ($counter === 0 || $counter === 4)
          <div class="col-lg-4 mt-4">
           <div class="project_divider"></div>
           </div>
+          @if ($counter == 4)
+          <div class="col-lg-4 mt-4">
+            <div class="project_divider"></div>
+            </div>
+          @endif
          @endif 
         <div class="col-lg-4 mt-4">
-          {{-- @php
-          $k--;
-            echo $k;
-          @endphp --}}
-          <a class="project" href="" style="background: url('/img/proj_1.svg');">
+          <a class="project" target="_blank" href="/projects/{{$project->slug}}" style="background: url({{ asset('storage/' . $project->img) }})');">
                 <div class="project__top">
-                    <div class="project__symbol project__symbol_pink">А</div>
-                    <div class="project__date">12.12.2012</div>
+                    <div class="project__symbol project__symbol_pink">{{ mb_substr(mb_strtoupper($project->title), 0,1)}}</div>
+                    <div class="project__date">{{ date('d.m.Y', strtotime($project->p_date))}}</div>
                 </div>
                 <div class="project__main">
-                    <div class="project__tag">Дизайн</div>
+                    <div class="project__tag">{{ $project->solution->title}}</div>
                     <div class="project__hr project__hr_pink"></div>
-                    <div class="project__name">Креативное агентство Accent</div>
+                    <div class="project__name">{{ $project->title }}</div>
                 </div>
                 <div class="project__bottom">
-                    <div class="project__info">accent.moscow</div>
+                    <div class="project__info">{{ $project->url}}</div>
                 </div>
             </a></div>
+            @php $counter++;
+            @endphp
         @endforeach
+        @if ($counter > count($projects) - 1)
+            <div class="col-lg-4 mt-4">
+                <div class="project_divider"></div>
+                </div>
+        @endif
       
     </div>
 @endsection
