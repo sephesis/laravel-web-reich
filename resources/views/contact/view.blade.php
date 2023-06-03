@@ -9,7 +9,7 @@
     </ul>
     <div class="col-lg-6">
       <h1 class="h1">Контакты</h1>
-      <div class="contacts">
+      <div class="contacts ">
         <div class="contacts__item-group">
           <div class="contacts__item"><span class="contacts__item-title">Email:</span>
             <p class="contacts__item-content"><a class="contacts__item-link" href="mailto:info@webreych.com">info@webreych.com</a></p>
@@ -20,7 +20,7 @@
         </div>
         <div class="contacts__item-group">
           <div class="contacts__item"><span class="contacts__item-title">График работы:</span>
-            <p class="contacts__item-content">Пн-Пт с 9:00 до 18:00 <br>Сб-Вс с 11:00 до 18:00</p>
+            <p class="contacts__item-content">Пн-Пт с 9:00 до 18:00</p>
           </div>
           <div class="contacts__item"><span class="contacts__item-title">Социальные сети:</span>
             <p class="contacts__item-content"><a class="contacts__item-link" href="vk.com">Вконтакте <br> <a class="contacts__item-link" href="t.me">Телеграм</a></a></p>

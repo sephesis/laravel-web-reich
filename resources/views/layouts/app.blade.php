@@ -16,7 +16,7 @@
   <body>
     <div class="container container-relative">
       <div class="row">
-        <div class="col-3"><a class="logo"><img src="{{ asset('site/img/logo.svg')}}"/></a></div>
+        <div class="col-3"><a class="logo" href="/"><img src="{{ asset('site/img/logo.svg')}}"/></a></div>
         <div class="col-9">
           <ul class="menu">
             <li class="menu__item"> <a class="menu__item-link" href="{{ route('solution.list')}}">Услуги</a></li>
