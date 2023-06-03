@@ -5,6 +5,8 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <link href="{{ asset('site/css/style.css') }}" rel="stylesheet" type="text/css"/>
 
+    <link href="{{ asset('site/css/custom.css') }}" rel="stylesheet" type="text/css"/>
+
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('site/apple-touch-icon.png') }}">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('site/favicon-32x32.png') }}">
   <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('site/favicon-16x16.png') }} ">
@@ -14,6 +16,17 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
   </head>
   <body>
+
+    <div id="preloader" class="preloader">
+      <div class="preloader__loader">
+        <div class="loadingio-spinner-ripple-a63hkhzkxdi">
+          <div class="ldio-32m2wfffqik">
+              <div></div>
+              <div></div>
+            </div>
+        </div>
+      </div>
+    </div>
     <div class="container container-relative">
       <div class="row">
         <div class="col-3"><a class="logo" href="/"><img src="{{ asset('site/img/logo.svg')}}"/></a></div>
@@ -27,6 +40,8 @@
           </ul>
         </div>
       </div>
+
+   
       @yield('content')
       <div class="row footer">
         <div class="footer__divider"></div><a class="footer__logo" href="/"><img src="{{asset('site/img/logo.svg')}}"/></a>
@@ -48,5 +63,6 @@
 
     <script src="{{ asset('site/js/scripts.js') }} "></script>
     <script src="{{ asset('site/js/custom/main.js') }} "></script>
+    <script src="{{ asset('site/js/site-scripts.js') }} "></script>
   </body>
 </html>
