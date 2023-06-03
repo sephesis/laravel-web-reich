@@ -35,6 +35,7 @@ class StoreRequest extends FormRequest
             'slug' => 'nullable',
             'property_column_size_4' => 'nullable',
             'property_column_size_8' => 'nullable',
+            'show_on_main' => 'nullable',
         ];
     }
 }

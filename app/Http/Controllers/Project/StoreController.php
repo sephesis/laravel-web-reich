@@ -12,7 +12,7 @@ use \Transliterate;
 class StoreController extends Controller
 {
     //
-    private const PROPERTY_KEYS = ['active', 'property_column_size_4', 'property_column_size_8'];
+    private const PROPERTY_KEYS = ['active', 'property_column_size_4', 'property_column_size_8', 'show_on_main'];
 
     public function __invoke(StoreRequest $request)
     {

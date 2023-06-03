@@ -14,9 +14,10 @@ class Project extends Model
     protected $table = 'projects';
     protected $quarded = false;
 
-    protected $fillable = ['title', 'url', 'active', 
+    protected $fillable = [ 'title', 'url', 'active', 
                             'year', 'p_date', 'color', 'solution_id', 'sort',
-                            'img', 'property_column_size_4', 'property_column_size_8', 'slug'];
+                            'img', 'property_column_size_4', 'property_column_size_8', 
+                            'slug', 'show_on_main'];
 
     public static function getStatuses()
     {

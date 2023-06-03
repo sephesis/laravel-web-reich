@@ -32,7 +32,7 @@ class HomeController extends Controller
         $groups = TechnologyGroup::all();
         $articles = Article::where('active', '=', 1)->get();
         $solutions = Solution::all();
-        $projects = Project::orderBy('sort', 'asc')->where('active', '=', 1)->get();
+        $projects = Project::orderBy('sort', 'asc')->where('active', '=', 1)->where('show_on_main', '=', 1)->get();
         $pageTitle = PageHelper::getCurrentTitle();
         return view('front.index', compact('groups', 'articles', 'solutions', 'projects', 'pageTitle'));
     }

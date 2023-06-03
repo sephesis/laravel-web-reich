@@ -76,6 +76,10 @@
                     </select>
                   </div>
                   <div class="form-group">
+                    <label class="text-secondary">Показывать на главной </label>
+                    <input type="checkbox" {{ $project->show_on_main ? 'checked' : ''}} name="show_on_main">
+                  </div>
+                  <div class="form-group">
                     <label class="text-secondary">Цвет</label>
   
                     <div class="input-group my-colorpicker2">
