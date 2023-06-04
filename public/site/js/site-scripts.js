@@ -1,21 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const mediaFiles = document.querySelectorAll('img');
+    const timeDelay = 1500;
     let preloader = document.getElementById('preloader');
     let body = document.getElementsByTagName('body')[0];
-    let i = 0
-    
+  
     body.style.overflowY = 'hidden';
-    Array.from(mediaFiles).forEach((file, index) => {
-        file.onload = () => {
-            i++
+    preloader.scrollIntoView();
 
-            console.log(i);
-            console.log(mediaFiles.length);
-            if(i === mediaFiles.length) {
-                preloader.classList.add('preloader--hide');
-                body.style.overflowY = 'scroll';
-            }
-        }
-    })
-
-})
+    setTimeout(function() {
+        preloader.classList.add('preloader--hide');
+        body.style.overflowY = 'scroll';
+    }, timeDelay);
+});

@@ -1,3 +1,4 @@
+
 .preloader {
   position: absolute;
   left: 0;
@@ -15,7 +16,7 @@
   z-index: -1;
 }
 
-.preloader__loader, .preloader__percents {
+.preloader__loader {
   position: absolute;
   top: 50%;
   left: 50%;

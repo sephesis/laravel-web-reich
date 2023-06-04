@@ -16,7 +16,6 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
   </head>
   <body>
-
     <div id="preloader" class="preloader">
       <div class="preloader__loader">
         <div class="loadingio-spinner-ripple-a63hkhzkxdi">
