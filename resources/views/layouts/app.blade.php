@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <title>Web-Reich</title>
+    <title>@yield('title')</title>
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <link href="{{ asset('site/css/style.css') }}" rel="stylesheet" type="text/css"/>
 

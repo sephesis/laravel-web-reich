@@ -21,7 +21,7 @@ class StoreController extends Controller
             $data['img'] = Storage::disk('public')->put('/images', $data['img']);
         }
     
-        $tagsIds = $data['tags'];
+        $tagsIds = isset($data['tags']) ? $data['tags'] : [];
 
         unset($data['tags']);
 
@@ -34,12 +34,15 @@ class StoreController extends Controller
     
         $article = (new Article())->create($data);
      
-        foreach ($tagsIds as $tagId) {
-            ArticleTag::firstOrCreate([
-                'article_id' => $article->id,
-                'tag_id' => $tagId,
-            ]);
+        if (!empty($tagsIds)) {
+            foreach ($tagsIds as $tagId) {
+                ArticleTag::firstOrCreate([
+                    'article_id' => $article->id,
+                    'tag_id' => $tagId,
+                ]);
+            }
         }
+      
 
         return redirect()->route('article.index');
     }

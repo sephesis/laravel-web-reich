@@ -1,4 +1,6 @@
-
+.pagination__item.pagination__item_active {
+  background-color: #ff2642;
+}
 .preloader {
   position: absolute;
   left: 0;

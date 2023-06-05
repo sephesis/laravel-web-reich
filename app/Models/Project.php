@@ -4,15 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Traits\Filterable;
 
 class Project extends Model
 {
-    use HasFactory;
+    use HasFactory, Filterable;
 
-    private const IS_ACTIVE = 1, IS_DISABLED = 0;
+    private const IS_ACTIVE = 1, 
+                  IS_DISABLED = 0;
 
     protected $table = 'projects';
-    protected $quarded = false;
+    protected $guarded = false;
 
     protected $fillable = [ 'title', 'url', 'active', 
                             'year', 'p_date', 'color', 'solution_id', 'sort',

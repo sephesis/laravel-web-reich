@@ -16,7 +16,6 @@ class ArticleFilter extends AbstractFilter
             self::ACTIVE => [$this, 'active'],
             self::SLUG => [$this, 'slug'],
             self::ID => [$this, 'id'],
-
         ];
     }
 
