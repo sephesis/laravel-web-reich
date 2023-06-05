@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', $pageTitle . ' | ' . config('app.name'))
+
 @section('content')
 <div class="row">
   <ul class="breadcrumbs">
@@ -27,21 +29,7 @@
   </div>
   <div class="row mt-5 d-flex justify-content-center">
     <div class="col-lg-4">
-      {{-- <ul class="pagination"> --}}
         {{ $articles->links()}}
-        {{-- @foreach ($articles->links() as $link)
-     
-        @endforeach --}}
-        {{-- <li class="pagination__item"> <a class="pagination__item-link">
-          <img class="pagination__arrow" src="{{ asset('site/img/arrow_right.svg') }}"/></a></li>
-        <li class="pagination__item"> <a class="pagination__item-link">1</a></li>
-        <li class="pagination__item"><a class="pagination__item-link">2</a></li>
-        <li class="pagination__item"><a class="pagination__item-link">3</a></li>
-        <li class="pagination__item"><a class="pagination__item-link">4</a></li>
-        <li class="pagination__item"> <a class="pagination__item-link">5</a></li>
-        <li class="pagination__item"> <a class="pagination__item-link">
-          <img class="pagination__arrow" src="{{ asset('site/img/arrow_left.svg') }}"/></a></li> --}}
-      {{-- </ul> --}}
     </div>
   </div>
 @endsection

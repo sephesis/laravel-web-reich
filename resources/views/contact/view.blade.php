@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', $pageTitle . ' | ' . config('app.name'))
+
 @section('content')
 
 <div class="row">
@@ -8,7 +10,7 @@
       <li class="breadcrumbs__item breadcrumbs__item-active">Контакты</li>
     </ul>
     <div class="col-lg-6">
-      <h1 class="h1">Контакты</h1>
+      <h1 class="h1">{{ $pageTitle }}</h1>
       <div class="contacts ">
         <div class="contacts__item-group">
           <div class="contacts__item"><span class="contacts__item-title">Email:</span>

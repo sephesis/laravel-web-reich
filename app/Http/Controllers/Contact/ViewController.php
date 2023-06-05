@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Contact;
 
 use App\Http\Controllers\Controller;
+use App\Resourses\PageHelper;
 use Illuminate\Http\Request;
 
 class ViewController extends Controller
@@ -10,6 +11,7 @@ class ViewController extends Controller
     //
     public function __invoke()
     {
-        return view('contact.view');
+        $pageTitle = PageHelper::getCurrentTitle();
+        return view('contact.view', compact('pageTitle'));
     }
 }
