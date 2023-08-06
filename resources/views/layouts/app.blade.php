@@ -3,7 +3,9 @@
   <head>
     <title>@yield('title')</title>
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <link href="{{ asset('site/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('site/css/style.css') }}" rel="stylesheet" type="text/css"/>
+  
 
     <link href="{{ asset('site/css/custom.css') }}" rel="stylesheet" type="text/css"/>
 
@@ -28,9 +30,23 @@
     </div>
     <div class="container container-relative">
       <div class="row">
-        <div class="col-3"><a class="logo" href="/"><img src="{{ asset('site/img/logo.svg')}}"/></a></div>
+        <section class="top-nav">
+          <div><img src="{{ asset('site/img/Vector.svg')}}"/></div>
+          <input id="menu-toggle" type="checkbox"/>
+          <label class="menu-button-container" for="menu-toggle">
+            <div class="menu-button"></div>
+          </label>
+          <ul class="menu menu_mobile">
+            <li class="menu__item"> <a class="menu__item-link" href="{{ route('solution.list')}}">Услуги</a></li>
+            <li class="menu__item"> <a class="menu__item-link" target="_blank" href="{{ route('project.list')}}">Проекты</a></li>
+            <li class="menu__item"> <a class="menu__item-link" target="_blank" href="#">Прайс</a></li>
+            <li class="menu__item"> <a class="menu__item-link" target="_blank" href="{{ route('article.list')}}">Статьи</a></li>
+            <li class="menu__item"> <a class="menu__item-link" target="_blank" href="{{ route('contact.view')}}">Контакты</a></li>
+          </ul>
+        </section>
+        <div class="col-3"><a class="logo d-none d-lg-block" href="/"><img src="{{ asset('site/img/logo.svg')}}"/></a></div>
         <div class="col-9">
-          <ul class="menu">
+          <ul class="menu d-none d-lg-flex">
             <li class="menu__item"> <a class="menu__item-link" href="{{ route('solution.list')}}">Услуги</a></li>
             <li class="menu__item"> <a class="menu__item-link" target="_blank" href="{{ route('project.list')}}">Проекты</a></li>
             <li class="menu__item"> <a class="menu__item-link" target="_blank" href="#">Прайс</a></li>
