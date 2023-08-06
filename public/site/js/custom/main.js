@@ -5465,6 +5465,17 @@ $(document).ready(function(){
             arrows: true,
             prevArrow: "<div class='slick-prev'><img style='height:30px; cursor:pointer' src='site/img/arrow_left.svg'/></div>",
             nextArrow: "<div class='slick-next'><img style='height:30px; cursor:pointer' src='site/img/arrow_right.svg'/></div>",
+            responsive: [
+              {
+                breakpoint: 600,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 1,
+                  dots: false,
+                  arrows: false,
+                }
+              }
+            ]
         });
     }
 });

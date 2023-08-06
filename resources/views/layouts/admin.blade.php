@@ -374,8 +374,8 @@
 <script src="{{ asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- ChartJS -->
 <script src="{{ asset('adminlte/plugins/chart.js/Chart.min.js') }}"></script>
-{{-- <!-- Sparkline -->
-<script src="{{ asset('adminlte/plugins/sparklines/sparkline.js') }}"></script> --}}
+-- <!-- Sparkline -->
+<script src="{{ asset('adminlte/plugins/sparklines/sparkline.js') }}"></script> 
 <!-- JQVMap -->
 <script src="{{ asset('adminlte/plugins/jqvmap/jquery.vmap.min.js') }}"></script>
 <script src="{{ asset('adminlte/plugins/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
@@ -444,8 +444,6 @@ $(function () {
 
   $('.tags').select2()
 
-
-
   $('#reservationdatetime').datetimepicker({ icons: { time: 'far fa-clock' } });
 });
 </script>
@@ -454,20 +452,20 @@ $(function () {
 <script src="{{ asset('adminlte/plugins/daterangepicker/daterangepicker.js') }}"></script>
 <script src="https://cdn.tiny.cloud/1/t1an7ud0p8l88aslom7bq7xnvszjt5tigd1owo8g2fg31kng/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
-    tinymce.init({
-      selector: 'textarea',
-      plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
-      toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-      tinycomments_mode: 'embedded',
-      tinycomments_author: 'Author name',
-      mergetags_list: [
-        { value: 'First.Name', title: 'First Name' },
-        { value: 'Email', title: 'Email' },
-      ]
-    });
+    // tinymce.init({
+    //   selector: 'textarea',
+    //   plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+    //   toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+    //   tinycomments_mode: 'embedded',
+    //   tinycomments_author: 'Author name',
+    //   mergetags_list: [
+    //     { value: 'First.Name', title: 'First Name' },
+    //     { value: 'Email', title: 'Email' },
+    //   ]
+    // });
   </script>
 
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-{{-- <script src="{{ asset('adminlte/dist/js/pages/dashboard.js') }}"></script> --}}
+ <script src="{{ asset('adminlte/dist/js/pages/dashboard.js') }}"></script> 
 </body>
 </html>

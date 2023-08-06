@@ -1,4 +1,5 @@
 @extends('layouts.app');
+@section('title', $pageTitle . ' | ' . config('app.name'))
 @section('content')
 <div class="row">
     <div class="col-lg-6">
@@ -33,7 +34,7 @@
   </div>
   <div class="row mt-5">
     @foreach ($solutions as $k => $solution)
-    <div class="col-lg-3"><a class="solutions__card h-100" href="#">
+    <div class="col-lg-3 col-sm-12"><a class="solutions__card h-100" href="#">
         <div class="solutions__number">0{{$k + 1}}</div>
         <div class="solutions__name">{{ $solution->title }}</div>
         @if ($solution->services)
@@ -61,7 +62,7 @@
   <div class="row mt-5">
     @foreach ($groups as $group)
         @if ($group->technologies)
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-sm-2">
             <div class="technology__item card h-100">
               <div class="technology__item-wrap">
                 <h4 class="technology__name">{{$group->title}}</h4>
@@ -113,15 +114,18 @@
   <div class="row mt-5 post__slider"> 
     @foreach ($articles as $article)
     <div class="col-lg-3">
-      <div class="post__card card"><a class="post__card-link" href="{{ route('article.view', ['slug' => $article->slug ])}}"> 
-        @if ($article->img)
-        <img class="img-fluid post__image" src="{{ asset('storage/' . $article->img) }}"/>
-        @else
-        <img class="img-fluid post__image" src="{{ asset('site/img/post1.png') }}"/>
-        @endif
-          <div class="post__card-date">{{ $article->formattedDateCreated}}</div>
-          <div class="post__card-title">{{ $article->title }}</div></a></div>
+          <div class="post__card card">
+              <a class="post__card-link" href="{{ route('article.view', ['slug' => $article->slug ])}}"> 
+                  @if ($article->img)
+                  <img class="img-fluid post__image" src="{{ asset('storage/' . $article->img) }}"/>
+                  @else
+                  <img class="img-fluid post__image" src="{{ asset('site/img/post1.png') }}"/>
+                  @endif
+                  <div class="post__card-date">{{ $article->formattedDateCreated}}</div>
+                  <div class="post__card-title">{{ $article->title }}</div>
+              </a>
         </div>
+    </div>
     @endforeach
   </div>
   <div class="row">
@@ -129,7 +133,7 @@
       <section class="contact__wrap">
         <div class="header__pretext header__pretext-small">#contact&nbsp;us</div>
         <h2 class="h2 h2__big">Придумали проект? <br><span class="colored">Оставьте заявку</span></h2>
-      </section>от него веет 
+      </section>
     </div>
   </div>
   <div class="row">
