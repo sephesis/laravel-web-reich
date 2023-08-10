@@ -22,7 +22,7 @@
         <img class="img-fluid" src="{{ asset('site/img/post1.png') }}"/>
         @endif
       
-          <div class="post__card-date">{{ $article->formattedDateCreated }}</div>
+          <span class="post__card-date">{{ $article->formattedDateCreated }}</span>
           <div class="post__card-title">{{ $article->title }}</div></a></div>
     </div>
     @endforeach

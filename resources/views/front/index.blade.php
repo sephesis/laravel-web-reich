@@ -122,8 +122,8 @@
                   @else
                   <img class="img-fluid post__image" src="{{ asset('site/img/post1.png') }}"/>
                   @endif
-                  <div class="post__card-date">{{ $article->formattedDateCreated}}</div>
-                  <div class="post__card-title">{{ Illuminate\Support\Str::limit(strip_tags($article->title),45) }}</div>
+                  <span class="post__card-date">{{ $article->formattedDateCreated}}</span>
+                  <div class="post__card-title">{{ Illuminate\Support\Str::limit(strip_tags($article->title),45 ) }}</div>
               </a>
         </div>
     </div>

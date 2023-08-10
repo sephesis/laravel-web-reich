@@ -5445,8 +5445,8 @@
 $(document).ready(function(){
   $('.post__slider').slick({
     infinite: true,
-    slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToShow: 3,
+    slidesToScroll: 3,
     arrows: true,
     prevArrow: "<div class='slick-prev'><img style='height:30px; cursor:pointer' src='/site/img/arrow_right.svg'/></div>",
     nextArrow: "<div class='slick-next'><img style='height:30px; cursor:pointer' src='/site/img/arrow_right.svg'/></div>",

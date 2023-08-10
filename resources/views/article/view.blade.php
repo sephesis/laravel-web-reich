@@ -8,7 +8,7 @@
     </ul>
     <div class="col-lg-9">
       <h1 class="h1">{{ $article->title}}</h1>
-      <div class="post__card-date">{{ $article->formattedDateCreated}}</div>
+      <span class="post__card-date">{{ $article->formattedDateCreated}}</span>
       <hr class="hr"/>
       <div class="post__text">
         @if ($article->img)
