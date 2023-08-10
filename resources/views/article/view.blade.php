@@ -6,8 +6,8 @@
       <li class="breadcrumbs__item">   <a class="breadcrumbs__link" href="{{route('article.list')}}">Посты</a></li>
       <li class="breadcrumbs__item breadcrumbs__item-active">Как создать член в Фигме, чтобы вызвать зависть </li>
     </ul>
-    <div class="col-lg-9">
-      <h1 class="h1">{{ $article->title}}</h1>
+    <div class="col-lg-8 col-sm-12">
+      <h1 class="h1 h1_small">{{ $article->title}}</h1>
       <span class="post__card-date">{{ $article->formattedDateCreated}}</span>
       <hr class="hr"/>
       <div class="post__text">
@@ -24,22 +24,16 @@
       </div>
     </div>
     @if ($others)
-    <div class="col-lg-3">
-      <div class="post__wrapper">
-        <div class="header__pretext header__pretext-small">#our&nbsp;features</div>
-        <h2 class="h2">Похожее</h2>
+    <div class="col-lg-4 col-sm-12">
+      <div class="similar"> 
+        <div class="similar__title">Похожие статьи <span class="similar__counter">{{ '(' . count($others) . ')' }}</span></div>
+        <ul class="similar__list">
         @foreach ($others as $otherArticle)
-            <div class="post__card card mt-3 post__card-min">
-                <a class="post__card-link" target="_blank" href="{{ route('article.view', ['slug' => $otherArticle->slug ])}}"> 
-                    @if ($article->img)
-                    <img class="img-fluid" src="{{ asset('storage/' . $otherArticle->img) }}"/>
-                    @else
-                    <img class="img-fluid" src="{{ asset('site/img/post1.png') }}"/>
-                    @endif
-            <div class="post__card-date">{{ $otherArticle->formattedDateCreated}}</div>
-            <div class="post__card-title">{{ $otherArticle->title}}</div></a>
-        </div>
+        <li class="similar__item">
+          <a href="{{ route('article.view', ['slug' => $otherArticle->slug ])}}">{{ $otherArticle->title}}<br></a>
+          <span class="simipar__date">{{$otherArticle->formattedDateCreated}}</span></li>
         @endforeach
+        </ul>
       </div>
     </div>
     @endif
