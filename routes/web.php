@@ -108,6 +108,10 @@ Route::group(['prefix' => 'admin/titles'], function(){
 });
 
 
+// Route::group(['prefix' =>  'faq'], function(){
+//     //Route::get('/', \App\Http\Controllers\Faq\)
+// });
+
 Route::group(['prefix' => 'articles'], function(){
     Route::get('/', \App\Http\Controllers\Article\ListController::class)->name('article.list');
     Route::get('{slug}', \App\Http\Controllers\Article\ViewController::class)->name('article.view');
