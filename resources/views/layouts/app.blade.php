@@ -5,15 +5,12 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <link href="{{ asset('site/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('site/css/style.css') }}" rel="stylesheet" type="text/css"/>
-  
-
     <link href="{{ asset('site/css/custom.css') }}" rel="stylesheet" type="text/css"/>
 
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('site/apple-touch-icon.png') }}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('site/favicon-32x32.png') }}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('site/favicon-16x16.png') }} ">
-  <link rel="icon" type="image/png" href="{{ asset('site/favicon.ico') }} ">
-    {{-- <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script> --}}
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('site/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('site/favicon-16x16.png') }} ">
+    <link rel="icon" type="image/png" href="{{ asset('site/favicon.ico') }} ">
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
   </head>

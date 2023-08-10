@@ -24,17 +24,17 @@
       </div><img class="background__image" src="{{ asset('site/img/back.svg') }}"/>
     </div>
   </div>
-  <div class="row">
+  <div class="row section">
     <div class="col-lg-12">
-      <section class="solutions__wrap section">
+      <div class="section__title">
         <div class="header__pretext header__pretext-small">#fresh&nbsp;solutions</div>
         <h2 class="h2 h2__small">Попробуйте&nbsp; <span class="colored">свежие&nbsp;решения </span> для&nbsp;своего&nbsp;бизнеса</h2>
-      </section>
+      </div>
     </div>
   </div>
-  <div class="row mt-5">
+  <div class="row">
     @foreach ($solutions as $k => $solution)
-    <div class="col-lg-3 col-sm-12"><a class="solutions__card h-100" href="#">
+    <div class="col-lg-3 mb-4"><a class="solutions__card h-100" href="#">
         <div class="solutions__number">0{{$k + 1}}</div>
         <div class="solutions__name">{{ $solution->title }}</div>
         @if ($solution->services)
@@ -51,18 +51,18 @@
       </div>
   @endforeach
   </div>
-  <div class="row">
+  <div class="row section">
     <div class="col-lg-12">
-      <section class="technology__wrap section">
+      <div class="section__title">
         <div class="header__pretext header__pretext-small">#using&nbsp;technologies</div>
         <h2 class="h2 h2__small"><span class="colored">Технологии</span> разработки</h2>
-      </section>
+      </div>
     </div>
   </div>
-  <div class="row mt-5">
+  <div class="row">
     @foreach ($groups as $group)
         @if ($group->technologies)
-        <div class="col-lg-3 col-sm-2">
+        <div class="col-lg-3 col-sm-6">
             <div class="technology__item card h-100">
               <div class="technology__item-wrap">
                 <h4 class="technology__name">{{$group->title}}</h4>
@@ -80,12 +80,12 @@
         @endif
     @endforeach
   </div>
-  <div class="row  mt-5">
+  <div class="row section">
     <div class="col-lg-12">
-      <section class="route">
+      <div class="section__title">
         <div class="header__pretext header__pretext-small">#few&nbsp;projects&nbsp;we proud of</div>
         <h2 class="h2 h2__big">Немного <span class="colored">проектов</span>, которыми гордимся</h2>
-      </section>
+      </div>
     </div>
     @foreach ($projects as $project)
     
@@ -103,15 +103,16 @@
     </div>
     @endforeach
   </div>
-  <div class="row">
+  <div class="row section">
     <div class="col-lg-12">
-      <section class="technology__wrap">
+      <div class="section__title">
         <div class="header__pretext header__pretext-small">#latest&nbsp;posts</div>
         <h2 class="h2 h2__big">Последние <span class="colored">посты</span></h2>
-      </section>
+      </div>
     </div>
   </div>
-  <div class="row mt-5 post__slider"> 
+  <div class="row"> 
+    <div class="post__slider">
     @foreach ($articles as $article)
     <div class="col-lg-3">
           <div class="post__card card">
@@ -122,22 +123,23 @@
                   <img class="img-fluid post__image" src="{{ asset('site/img/post1.png') }}"/>
                   @endif
                   <div class="post__card-date">{{ $article->formattedDateCreated}}</div>
-                  <div class="post__card-title">{{ $article->title }}</div>
+                  <div class="post__card-title">{{ Illuminate\Support\Str::limit(strip_tags($article->title),45) }}</div>
               </a>
         </div>
     </div>
     @endforeach
+    </div>
   </div>
-  <div class="row">
+  <div class="row section">
     <div class="col-lg-12">
-      <section class="contact__wrap">
+      <div class="section__title">
         <div class="header__pretext header__pretext-small">#contact&nbsp;us</div>
         <h2 class="h2 h2__big">Придумали проект? <br><span class="colored">Оставьте заявку</span></h2>
-      </section>
+      </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-lg-5">
+    <div class="col-lg-5 col-sm-12">
       <div class="contact__text">Для расчета стоимости и получения подробной консультации, заполните email, телефон и прикрепите файл с ТЗ, если имеется.</div>
       <form action={{route('feedback.send')}} method="post">
         @csrf

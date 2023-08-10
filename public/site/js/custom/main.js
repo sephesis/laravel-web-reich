@@ -5443,6 +5443,25 @@
 //     }
 // })
 $(document).ready(function(){
+  $('.post__slider').slick({
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    arrows: true,
+    prevArrow: "<div class='slick-prev'><img style='height:30px; cursor:pointer' src='/site/img/arrow_right.svg'/></div>",
+    nextArrow: "<div class='slick-next'><img style='height:30px; cursor:pointer' src='/site/img/arrow_right.svg'/></div>",
+    responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            arrows: false,
+            dots: false
+          }
+        }
+      ]
+});
     let projects = $('.project');
     if (projects.length > 0) {
         projects.each(function(index){
@@ -5453,29 +5472,6 @@ $(document).ready(function(){
            }, function(){
                 $(this).css('background', oldBg);
            });
-        });
-    }
-});
-$(document).ready(function(){
-    if ($('.post__slider').length > 0) {
-        $('.post__slider').slick({
-            infinite: true,
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            arrows: true,
-            prevArrow: "<div class='slick-prev'><img style='height:30px; cursor:pointer' src='site/img/arrow_left.svg'/></div>",
-            nextArrow: "<div class='slick-next'><img style='height:30px; cursor:pointer' src='site/img/arrow_right.svg'/></div>",
-            responsive: [
-              {
-                breakpoint: 600,
-                settings: {
-                  slidesToShow: 2,
-                  slidesToScroll: 1,
-                  dots: false,
-                  arrows: false,
-                }
-              }
-            ]
         });
     }
 });
