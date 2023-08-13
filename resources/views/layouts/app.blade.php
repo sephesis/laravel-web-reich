@@ -63,7 +63,7 @@
           <div class="footer__title">Услуги </div><a class="footer__link">Веб-дизайн</a><a class="footer__link">Программирование</a><a class="footer__link">Фирменный стиль</a>
         </div>
         <div class="col-lg-3">
-          <div class="footer__title">Клиентам </div><a class="footer__link">Технологии</a><a class="footer__link">Проекты</a><a class="footer__link">Частые вопросы</a>
+          <div class="footer__title">Клиентам </div><a class="footer__link">Технологии</a><a class="footer__link">Проекты</a><a href="{{ route('faq.list') }}" class="footer__link">Частые вопросы</a>
         </div>
         <div class="col-lg-3">
           <div class="footer__title">Разделы </div><a class="footer__link">Услуги</a><a class="footer__link">Посты</a><a class="footer__link">Проекты</a>

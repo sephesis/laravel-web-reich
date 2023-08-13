@@ -114,6 +114,7 @@ Route::group(['prefix' => 'admin/faq'], function() {
 });
 
 
+
 // Route::group(['prefix' =>  'faq'], function(){
 //     //Route::get('/', \App\Http\Controllers\Faq\)
 // });
@@ -138,6 +139,11 @@ Route::group(['prefix' => 'contacts'], function(){
 Route::group(['prefix' => 'calculator'], function() {
     Route::get('/', \App\Http\Controllers\Calculator\IndexController::class)->name('calculator.index');
 });
+
+Route::group(['prefix' => 'faq'], function(){
+    Route::get('/', App\Http\Controllers\Faq\ListController::class)->name('faq.list');
+});
+
 
 //Auth::routes();
 
