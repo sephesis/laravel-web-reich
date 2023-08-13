@@ -129,8 +129,12 @@ Route::group(['prefix' => 'contacts'], function(){
     Route::get('/', \App\Http\Controllers\Contact\ViewController::class)->name('contact.view');
 });
 
+Route::group(['prefix' => 'calculator'], function() {
+    Route::get('/', \App\Http\Controllers\Calculator\IndexController::class)->name('calculator.index');
+});
 
-Route::post('/contact/submit', \App\Http\Controllers\Form\FormController::class)->name('feedback.send');
+
+// Route::post('/contact/submit', \App\Http\Controllers\Form\FormController::class)->name('feedback.send');
 
 
 //Auth::routes();

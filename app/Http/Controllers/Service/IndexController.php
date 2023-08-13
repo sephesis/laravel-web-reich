@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Service;
 
 use App\Http\Controllers\Controller;
 use App\Models\Service;
+use App\Resourses\PageHelper;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -13,6 +14,7 @@ class IndexController extends Controller
 
         $services = Service::all();
         $counter = Service::all()->count();
+        $pageTitle = PageHelper::getCurrentTitle();
         return view('service.index', compact('services', 'counter'));
     }
 }

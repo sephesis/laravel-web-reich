@@ -36,7 +36,7 @@
           <ul class="menu menu_mobile">
             <li class="menu__item"> <a class="menu__item-link" href="{{ route('solution.list')}}">Услуги</a></li>
             <li class="menu__item"> <a class="menu__item-link" target="_blank" href="{{ route('project.list')}}">Проекты</a></li>
-            <li class="menu__item"> <a class="menu__item-link" target="_blank" href="#">Прайс</a></li>
+            <li class="menu__item"> <a class="menu__item-link" target="_blank" href="{{ route('calculator.index') }}">Калькулятор</a></li>
             <li class="menu__item"> <a class="menu__item-link" target="_blank" href="{{ route('article.list')}}">Статьи</a></li>
             <li class="menu__item"> <a class="menu__item-link" target="_blank" href="{{ route('contact.view')}}">Контакты</a></li>
           </ul>
@@ -46,7 +46,7 @@
           <ul class="menu d-none d-lg-flex">
             <li class="menu__item"> <a class="menu__item-link" href="{{ route('solution.list')}}">Услуги</a></li>
             <li class="menu__item"> <a class="menu__item-link" target="_blank" href="{{ route('project.list')}}">Проекты</a></li>
-            <li class="menu__item"> <a class="menu__item-link" target="_blank" href="#">Прайс</a></li>
+            <li class="menu__item"> <a class="menu__item-link" target="_blank" href="{{ route('calculator.index') }}">Калькулятор</a></li>
             <li class="menu__item"> <a class="menu__item-link" target="_blank" href="{{ route('article.list')}}">Статьи</a></li>
             <li class="menu__item"> <a class="menu__item-link" target="_blank" href="{{ route('contact.view')}}">Контакты</a></li>
           </ul>

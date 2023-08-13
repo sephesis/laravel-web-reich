@@ -19,7 +19,7 @@ class PageHelper
         if (file_exists(base_path(self::getTitleMap()))) {
             return File::json(base_path(self::getTitleMap()));
         }
-        return [];
+        return '';
     }
 
     public static function getCurrentTitle()
