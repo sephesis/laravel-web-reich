@@ -63,14 +63,14 @@
           <div class="footer__title">Услуги </div><a class="footer__link">Веб-дизайн</a><a class="footer__link">Программирование</a><a class="footer__link">Фирменный стиль</a>
         </div>
         <div class="col-lg-3">
-          <div class="footer__title">Клиентам </div><a class="footer__link">Технологии</a><a class="footer__link">Проекты</a><a href="{{ route('faq.list') }}" class="footer__link">Частые вопросы</a>
+          <div class="footer__title">Клиентам </div><a class="footer__link">Технологии</a><a href="{{ route('project.list') }}" class="footer__link">Проекты</a><a href="{{ route('faq.list') }}" class="footer__link">Частые вопросы</a>
         </div>
         <div class="col-lg-3">
-          <div class="footer__title">Разделы </div><a class="footer__link">Услуги</a><a class="footer__link">Посты</a><a class="footer__link">Проекты</a>
+          <div class="footer__title">Разделы </div><a class="footer__link">Услуги</a><a href="{{ route('article.list') }}" class="footer__link">Посты</a><a href="{{ route('project.list') }}" class="footer__link">Проекты</a>
         </div>
         <div class="col-lg-3"><a class="footer__link footer__mail">info@webreych.com</a></div>
       </div>
-      <div class="d-flex justify-content-between"><a class="footer__credits footer__credits-link">Карта сайта</a><span class="footer__credits">2022</span><span class="footer__credits">Разработка сайта <span class="colored"> WebReich</span> </span></div>
+      <div class="d-flex justify-content-between"><a href="{{ route('sitemap.list')}}" class="footer__credits footer__credits-link">Карта сайта</a><span class="footer__credits">2022</span><span class="footer__credits">Разработка сайта <span class="colored"> WebReich</span> </span></div>
     </div>
 
     <script src="{{ asset('site/js/scripts.js') }} "></script>

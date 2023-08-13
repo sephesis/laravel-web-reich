@@ -144,6 +144,11 @@ Route::group(['prefix' => 'faq'], function(){
     Route::get('/', App\Http\Controllers\Faq\ListController::class)->name('faq.list');
 });
 
+Route::group(['prefix' => 'sitemap'], function(){
+    Route::get('/', App\Http\Controllers\Sitemap\ListController::class)->name('sitemap.list');
+});
+
+
 
 //Auth::routes();
 
