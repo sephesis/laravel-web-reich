@@ -283,6 +283,14 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{ route('faq.index') }}" class="nav-link">
+              <i class="nav-icon fa fa-archive"></i>
+              <p>
+               FAQ
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="" class="nav-link">
               <i class="nav-icon fa fa-users"></i>
               <p>Пользователи</p>

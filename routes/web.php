@@ -107,6 +107,10 @@ Route::group(['prefix' => 'admin/titles'], function(){
     Route::post('/update', \App\Http\Controllers\Title\UpdateController::class)->name('title.update');
 });
 
+Route::group(['prefix' => 'admin/faq'], function() {
+    Route::get('/', App\Http\Controllers\Faq\IndexController::class)->name('faq.index');
+});
+
 
 // Route::group(['prefix' =>  'faq'], function(){
 //     //Route::get('/', \App\Http\Controllers\Faq\)
@@ -132,10 +136,6 @@ Route::group(['prefix' => 'contacts'], function(){
 Route::group(['prefix' => 'calculator'], function() {
     Route::get('/', \App\Http\Controllers\Calculator\IndexController::class)->name('calculator.index');
 });
-
-
-// Route::post('/contact/submit', \App\Http\Controllers\Form\FormController::class)->name('feedback.send');
-
 
 //Auth::routes();
 
