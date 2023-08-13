@@ -40,7 +40,10 @@
                 <div class="form-group">
                   <input type="text" name="title" placeholder="Текст вопроса" class="form-control">
                 </div>
-
+                <div class="form-group">
+                    <input type="checkbox" name="active">
+                    <label class="text-secondary">Активность </label>
+                  </div>
                 <div class="form-group">
                     <input type="text" name="sort" placeholder="Сортировка" value="500" class="form-control">
                   </div>

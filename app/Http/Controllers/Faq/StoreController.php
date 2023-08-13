@@ -10,10 +10,19 @@ use Illuminate\Support\Facades\Storage;
 
 class StoreController extends Controller
 {
+    private const PROPERTY_KEYS = ['active'];
+
     public function __invoke(StoreRequest $request)
     {
-       $data = $request->validated();
+        $data = $request->validated();
 
-       return redirect()->back()->with('success', 'Настройки были успешно обновлены');
+        foreach (self::PROPERTY_KEYS as $key) {
+            $data[$key] = array_key_exists($key, $data) ? true : false;
+        }
+
+
+        $faq = (new Faq())->create($data);
+
+        return redirect()->back()->with('success', 'Данные успешно сохранены');
     }
 }

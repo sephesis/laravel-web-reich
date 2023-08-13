@@ -10,6 +10,23 @@ class Faq extends Model
     protected $table = 'faq';
     protected $guarded = false;
 
+    private const IS_ACTIVE = 1, 
+                  IS_DISABLED = 0;
 
-    //protected $fillable = ['tag_id', 'article_id'];
+
+    public static function getStatuses()
+    {
+         return [
+            self::IS_ACTIVE => 'Опубликована', 
+            self::IS_DISABLED => 'Не опубликована'
+         ];
+    }
+
+    /**
+     * отдает название атрибута
+     */
+    public function getStatusTitleAttribute() 
+    {
+        return self::getStatuses()[$this->active];
+    }
 }

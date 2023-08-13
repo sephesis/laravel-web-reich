@@ -284,7 +284,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ route('faq.index') }}" class="nav-link">
-              <i class="nav-icon fa fa-archive"></i>
+              <i class="nav-icon fa fa-question-circle"></i>
               <p>
                FAQ
               </p>

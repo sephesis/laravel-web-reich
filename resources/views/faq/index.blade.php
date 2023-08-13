@@ -31,30 +31,29 @@
                     <thead>
                     <tr>
                       <th style="width:5%">ID</th>
-                      <th style="width:18%">Название</th>
-                      <th style="width: 38%">Описание</th>
+                      <th style="width:50%">Название</th>
+                    
                       <th style="width 10%"> Статус </th>
                       <th></th>
                     </tr>
                     </thead>
                     <tbody>
-                      {{-- @foreach ($faqs as $faq)
+                       @foreach ($faqs as $faq)
                       <tr id="faq-{{ $faq->id }}">
                         <td>{{ $faq->id }}</td>
-                        <td><a href="{{ route('faq.show', $faq->id)}}">{{ $faq->title }}</a></td>
-                        <td>{{ $faq->previewText }}</td>
+                        <td><a href="">{{ $faq->title }}</a></td>
                         <td>{{ $faq->statusTitle }}</td>
-                        <td><a data-id="{{ $faq->id }}" data-url="{{ route('faq.edit', $faq->id ) }}" class=" btn btn-primary btn-sm update" href="{{ route('faq.edit', $faq->id ) }}"> <i class="fas fa-pencil-alt"></i> Редактировать</a>
-                          <a data-id="{{ $faq->id }}" data-url="{{ route('faq.delete', $faq->id)}}" class="btn btn-danger btn-sm delete" href="javascript:void(0);"><i class="fas fa-trash"> </i> Удалить</a>
+                        <td><a data-id="{{ $faq->id }}" data-url="" class=" btn btn-primary btn-sm update" href="javascript:void(0);"> <i class="fas fa-pencil-alt"></i> Редактировать</a>
+                          <a data-id="{{ $faq->id }}" data-url="" class="btn btn-danger btn-sm delete" href="javascript:void(0);"><i class="fas fa-trash"> </i> Удалить</a>
                         </td>
                       </tr>
-                      @endforeach --}}
+                      @endforeach
                     </tbody>
                     <tfoot>
                     <tr>
                       <th>ID</th>
                       <th>Название</th>
-                      <th>Описание</th>
+                    
                       <th> Статус </th>
                       <th></th>
                     </tr>

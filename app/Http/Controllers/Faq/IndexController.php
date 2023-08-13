@@ -11,8 +11,8 @@ class IndexController extends Controller
     //
     public function __invoke()
     {
-        $faq = Faq::all();
+        $faqs = Faq::all();
         $counter = Faq::all()->count();
-        return view('faq.index', compact('faq', 'counter'));
+        return view('faq.index', compact('faqs', 'counter'));
     }
 }
