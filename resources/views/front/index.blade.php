@@ -14,6 +14,7 @@
           </ul>
         </div><a class="button" href="#">Выбрать нас</a>
         <div class="header__info"><a class="header__link" target="_blank" href="{{ route('project.list')}}">Смотреть портфолио<svg width="12" class="header__link header__link-img" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M1.35355 0.646447C1.15829 0.451184 0.841709 0.451184 0.646447 0.646447C0.451184 0.841709 0.451184 1.15829 0.646447 1.35355L1.35355 0.646447ZM11 11.5C11.2761 11.5 11.5 11.2761 11.5 11V6.5C11.5 6.22386 11.2761 6 11 6C10.7239 6 10.5 6.22386 10.5 6.5V10.5H6.5C6.22386 10.5 6 10.7239 6 11C6 11.2761 6.22386 11.5 6.5 11.5H11ZM0.646447 1.35355L10.6464 11.3536L11.3536 10.6464L1.35355 0.646447L0.646447 1.35355Z"/></svg></a></div>
+        
       </div>
     </div>
     <div class="col-lg-6">
@@ -141,7 +142,7 @@
   <div class="row">
     <div class="col-lg-5 col-sm-12">
       <div class="contact__text">Для расчета стоимости и получения подробной консультации, заполните email, телефон и прикрепите файл с ТЗ, если имеется.</div>
-      <form action={{route('feedback.send')}} method="post">
+      <form action="" method="post">
         @csrf
         <input type="text" placeholder="Ваше имя"/>
         <input type="text" placeholder="Номер телефона"/>
