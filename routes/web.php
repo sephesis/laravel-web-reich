@@ -109,6 +109,8 @@ Route::group(['prefix' => 'admin/titles'], function(){
 
 Route::group(['prefix' => 'admin/faq'], function() {
     Route::get('/', App\Http\Controllers\Faq\IndexController::class)->name('faq.index');
+    Route::get('/create', \App\Http\Controllers\Faq\CreateController::class)->name('faq.create');
+    Route::post('/', \App\Http\Controllers\Faq\StoreController::class)->name('faq.store');
 });
 
 

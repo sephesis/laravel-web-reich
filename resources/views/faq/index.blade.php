@@ -74,10 +74,10 @@
         </div><!-- /.container-fluid -->
       </section>
       {{-- создаем обертки для бутстраповских модалок --}}
-      @foreach ($faqs as $faq)
+      {{-- @foreach ($faqs as $faq)
       <div class="modal fade" id="modal-default-{{$faq->id}}">
       </div>
-      @endforeach
+      @endforeach --}}
       </div>
       <!-- /.content -->
 @endsection

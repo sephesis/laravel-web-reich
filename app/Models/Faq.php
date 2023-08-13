@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Faq extends Model
 {
-    protected $table = 'faw';
+    protected $table = 'faq';
     protected $guarded = false;
 
 
