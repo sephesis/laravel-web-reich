@@ -25,6 +25,7 @@ class FilterRequest extends FormRequest
             'id' => 'int',
             'active' => 'int',
             'slug'=> 'string',
+            'tags' => 'int',
         ];
     }
 }

@@ -15,8 +15,7 @@ class ViewController extends Controller
     {
         $article = Article::where('slug', '=', $slug)->firstOrFail();
 
-        $others = Article::where('id', '!=', $article->id)->take(2)->get();
-        
+        $others = Article::where('id', '!=', $article->id)->take(5)->get();
         //ивент счетчика просмотров статьи
         event('articleHasViewed', $article);
         return view('article.view', compact('article', 'others'));

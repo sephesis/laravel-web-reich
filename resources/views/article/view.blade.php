@@ -22,6 +22,13 @@
         <div class="post__counter">Просмотров: {{ $article->views}}</div>
         <div class="post__share"><a class="post__share-link">Поделиться</a></div>
       </div>
+      <div class="tags">
+        <ul class="tags__list">
+          @foreach ($article->tags as $tag)
+          <li class="tags__item"><a class="tags__link" href="{{ route('article.list') }}?tags={{$tag->id}}">#{{$tag->title}}</a></li>
+          @endforeach
+        </ul>
+      </div>
     </div>
     @if ($others)
     <div class="col-lg-4 col-sm-12">
