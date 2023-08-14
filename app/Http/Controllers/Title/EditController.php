@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Title;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
-use App\Resourses\PageHelper;
+use App\Resourses\Helpers\PageHelper;
 
 class EditController extends Controller
 {

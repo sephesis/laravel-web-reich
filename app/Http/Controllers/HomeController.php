@@ -7,7 +7,7 @@ use App\Models\Solution;
 use App\Models\Technology;
 use App\Models\Project;
 use App\Models\TechnologyGroup;
-use App\Resourses\PageHelper;
+use App\Resourses\Helpers\PageHelper;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller

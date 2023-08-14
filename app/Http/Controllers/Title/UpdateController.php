@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Title;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\Title\UpdateRequest;
-use App\Resourses\PageHelper;
+use App\Resourses\Helpers\PageHelper;
 
 class UpdateController extends Controller
 {

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Contact;
 
 use App\Http\Controllers\Controller;
-use App\Resourses\PageHelper;
+use App\Resourses\Helpers\PageHelper;
 use Illuminate\Http\Request;
 
 class ViewController extends Controller

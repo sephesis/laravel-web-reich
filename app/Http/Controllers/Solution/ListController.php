@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Solution;
 
 use App\Http\Controllers\Controller;
 use App\Models\Solution;
-use App\Resourses\PageHelper;
+use App\Resourses\Helpers\PageHelper;
 
 class ListController extends Controller
 {

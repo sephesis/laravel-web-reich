@@ -9,7 +9,7 @@ use App\Http\Requests\Article\UpdateRequest;
 use App\Models\Article;
 use App\Models\ArticleTag;
 use App\Http\Filters\ArticleFilter;
-use App\Resourses\PageHelper;
+use App\Resourses\Helpers\PageHelper;
 
 class ListController extends Controller
 {

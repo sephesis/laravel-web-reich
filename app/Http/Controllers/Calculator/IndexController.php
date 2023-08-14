@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Calculator;
 
-use App\Resourses\PageHelper;
+use App\Resourses\Helpers\PageHelper;
 
 class IndexController
 {
