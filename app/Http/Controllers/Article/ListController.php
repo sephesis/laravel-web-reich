@@ -23,13 +23,7 @@ class ListController extends Controller
         $articles = Article::filter($filter)->paginate(8);  
         
         if (isset($_GET['tags'])) {
-            $articleTags = ArticleTag::where('tag_id', $_GET['tags'])->get();
-
-            foreach ($articleTags as $articleTag) {
-                $articleTagsIds[] = $articleTag->article_id;
-            }
-
-            $articles = Article::whereIn('id', $articleTagsIds)->paginate(8);
+           $articles = Article::filter($filter)->paginate(8);
             
         }
 

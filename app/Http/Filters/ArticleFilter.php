@@ -3,6 +3,7 @@
 namespace App\Http\Filters;
 
 use App\Models\Article;
+use App\Models\ArticleTag;
 use Illuminate\Database\Eloquent\Builder;
 
 class ArticleFilter extends AbstractFilter
@@ -40,14 +41,12 @@ class ArticleFilter extends AbstractFilter
     public function tags(Builder $builder, $value)
     {
 
-       // $builder->where('tags', $value);
-        // $article = Article::whereHas('tags', function($query)
-        // {
-        //     $query->where('id', '=', 2);
+        $articleTags = ArticleTag::where('tag_id', $value)->get();
 
-        // });
+        foreach ($articleTags as $articleTag) {
+            $articleTagsIds[] = $articleTag->article_id;
+        }
 
-        //return $article;
-        //$builder->where('tags', $value);
+        $builder->whereIn('id', $articleTagsIds);
     }
 }
