@@ -28,7 +28,7 @@
     @endforeach
   </div>
   <div class="row mt-5 d-flex justify-content-center">
-    <div class="col-lg-4">
+    <div class="col-lg-4 col-lg-4 d-flex justify-content-center ">
         {{ $articles->links()}}
     </div>
   </div>

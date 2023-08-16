@@ -21,11 +21,6 @@ class ListController extends Controller
         $filter = app()->make(ArticleFilter::class, ['queryParams' => array_filter($data)]);
     
         $articles = Article::filter($filter)->paginate(8);  
-        
-        if (isset($_GET['tags'])) {
-           $articles = Article::filter($filter)->paginate(8);
-            
-        }
 
         $pageTitle = PageHelper::getCurrentTitle();
 

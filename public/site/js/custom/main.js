@@ -5474,4 +5474,9 @@ $(document).ready(function(){
            });
         });
     }
+
+    $('.pagination__item').on('click', function(){
+        location.href = $(this).find('.pagination__item-link').attr('href');
+    });
 });
+
