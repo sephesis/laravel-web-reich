@@ -148,6 +148,10 @@ Route::group(['prefix' => 'sitemap'], function(){
     Route::get('/', App\Http\Controllers\Sitemap\ListController::class)->name('sitemap.list');
 });
 
+Route::group(['prefix' => 'test'], function(){
+    Route::get('/', App\Http\Controllers\Test\IndexController::class)->name('test.index');
+});
+
 
 
 //Auth::routes();
