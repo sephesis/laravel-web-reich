@@ -142,26 +142,28 @@
   <div class="row">
     <div class="col-lg-5 col-sm-12">
       <div class="contact__text">Для расчета стоимости и получения подробной консультации, заполните email, телефон и прикрепите файл с ТЗ, если имеется.</div>
-      <form action="" method="post">
+      <form action="{{ route('feedback.submit') }}" method="post">
         @csrf
-        <input type="text" placeholder="Ваше имя"/>
-        <input type="text" placeholder="Номер телефона"/>
+        <input type="text" data-required="true" data-type="border" name="feedback_name" placeholder="Ваше имя"/>
+        <input type="text" data-required="true" data-type="border" name="feedback_phone" placeholder="Номер телефона"/>
         <div class="form__field-group">
           <label>Вид работ
-            <select> 
-              <option>Интеграции</option>
-              <option>Дизайн</option>
-              <option>Модуль</option>
-              <option>Другое</option>
+            <select name="feedback_type"> 
+              @foreach ($serviceTypes as $serviceType)
+              <option value="{{$serviceType->id}}">{{ $serviceType->title }}</option>
+              @endforeach
             </select>
           </label>
         </div>
+        <input type="file" name="feedback_file">
         <div class="form__field-policy">
           <label class="checkbox-button">
-            <input class="checkbox-button__input" type="checkbox"/><span class="checkbox-button__control"></span><span class="checkbox-button__label">Я соглашаюсь на обработку персональных данных в соответствие с политикой конфиденциальности</span>
+            <input class="checkbox-button__input" data-required="true" name="feedback_privacy" type="checkbox"/> <span class="checkbox-button__control"></span><span class="checkbox-button__label">Я соглашаюсь на обработку персональных данных в соответствие с политикой конфиденциальности</span>
+          
           </label>
+          
         </div>
-        <button class="button">Отправить</button>
+        <button class="button js-form-send">Отправить</button>
       </form>
     </div>
     <div class="col-lg-7">

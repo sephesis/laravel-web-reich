@@ -6,6 +6,7 @@ use App\Models\Article;
 use App\Models\Solution;
 use App\Models\Technology;
 use App\Models\Project;
+use App\Models\Service;
 use App\Models\TechnologyGroup;
 use App\Resourses\Helpers\PageHelper;
 use Illuminate\Http\Request;
@@ -34,6 +35,9 @@ class HomeController extends Controller
         $solutions = Solution::all();
         $projects = Project::orderBy('sort', 'asc')->where('active', '=', 1)->where('show_on_main', '=', 1)->get();
         $pageTitle = PageHelper::getCurrentTitle();
-        return view('front.index', compact('groups', 'articles', 'solutions', 'projects', 'pageTitle'));
+        $serviceTypes = Service::all();
+
+
+        return view('front.index', compact('groups', 'articles', 'solutions', 'projects', 'pageTitle', 'serviceTypes'));
     }
 }

@@ -148,10 +148,9 @@ Route::group(['prefix' => 'sitemap'], function(){
     Route::get('/', App\Http\Controllers\Sitemap\ListController::class)->name('sitemap.list');
 });
 
-Route::group(['prefix' => 'test'], function(){
-    Route::get('/', App\Http\Controllers\Test\IndexController::class)->name('test.index');
-});
-
+//Route::group(['prefix' => 'feedback'], function(){
+    Route::post('/submit', \App\Http\Controllers\Form\FormController::class)->name('feedback.submit');
+//});
 
 
 //Auth::routes();
