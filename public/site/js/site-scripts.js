@@ -44,8 +44,6 @@ $(document).ready(function(){
     });
 
     $('input[type="checkbox"]').on('change', function(){
-
-        console.log($(this).next('.checkbox-button__control').css('border'));
         if ($(this).next('.checkbox-button__control').css('border') === '1px solid rgb(255, 0, 0)') {
             $(this).next('.checkbox-button__control').css('border', '');
         }
