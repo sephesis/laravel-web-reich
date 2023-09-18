@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Form;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\Form\SendRequest;
+use App\Resourses\Integrations\Telegram\Handler22;
 
 class FormController extends Controller
 {
@@ -16,10 +17,11 @@ class FormController extends Controller
         //
         $data = $request->validated();
 
-//        dd($data);
+        $name = $data['feedback_name'];
+        $phone = $data['feedback_phone'];
 
         return response()->json([
-            'name' => $data['feedback_name'],
+            'name' => $name,
         ]);
     }
 }

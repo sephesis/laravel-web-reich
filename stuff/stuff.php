@@ -15,3 +15,5 @@
 //
 
 //роуты должны иметь разные ссылки
+
+//sail artisan telegraph:set-webhook
