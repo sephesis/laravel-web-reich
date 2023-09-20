@@ -40,7 +40,6 @@ class ArticleFilter extends AbstractFilter
 
     public function tags(Builder $builder, $value)
     {
-
         $articleTags = ArticleTag::where('tag_id', $value)->get();
 
         foreach ($articleTags as $articleTag) {
