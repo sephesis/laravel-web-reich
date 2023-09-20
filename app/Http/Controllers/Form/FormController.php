@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Form\SendRequest;
 use DefStudio\Telegraph\Facades\Telegraph as Telegraph;
 use Illuminate\Support\Facades\Storage;
+use App\Models\FormResult;
 
 class FormController extends Controller
 {
@@ -19,29 +20,48 @@ class FormController extends Controller
         $data = $request->validated();
 
         $html = '';
+        $isFileExist = false;
 
         $name = $data['feedback_name'];
         $phone = $data['feedback_phone'];
         $type = $data['feedback_type'];
+        $agreement = $data['feedback_privacy'];
+
+        if (isset($data['feedback_file'])) {
+            $file = Storage::disk('local')->put('/files', $data['feedback_file']);
+            $isFileExist = true;
+        }
 
         $service = Service::find($type);
 
         $html = "<strong>Новая заявка на проект</strong>\n" . "Имя: " . $name . "\nТелефон: " . $phone . "\nУслуга: " . $service->title;
-        if (isset($data['feedback_file'])) {
-            $img = Storage::disk('local')->put('/files', $data['feedback_file']);
-            if (Storage::disk('local')->exists($img)) {
+
+        if ($isFileExist) {
+            if (Storage::disk('local')->exists($file)) {
                 $html .= "\nФайл с тз: Да";
-                Telegraph::document(Storage::path($img))->html($html)->send();
+                Telegraph::document(Storage::path($file))->html($html)->send();
             }else{
-                $html .= "\nФайл с тз не прикрепился, но находится по адресу " . $img;
+                $html .= "\nФайл с тз не прикрепился, но находится по адресу " . $file;
                 Telegraph::html($html)->send();
             }
         }else{
             Telegraph::html($html)->send();
         }
 
-        return response()->json([
+        $values = [
             'success' => true,
-        ]);
+            'name' => $name,
+            'phone' => $phone,
+            'agreement' => $agreement,
+            'serviceType' => $type,
+            'file' => $isFileExist ? $file : '',
+        ];
+
+        $prepared['values'] = json_encode($values);
+        $prepared['form_id'] = 1; 
+
+        $formResult = (new FormResult())->create($prepared);
+
+        return response()->json($values);
     }
 }
