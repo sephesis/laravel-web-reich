@@ -22,6 +22,8 @@ class SendRequest extends FormRequest
             'feedback_name' => 'required|string',
             'feedback_phone' => 'required|string',
             'feedback_privacy' => 'required',
+            'feedback_type' => 'string',
+            'feedback_file' => 'file',
         ];
     }
 }

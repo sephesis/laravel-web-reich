@@ -142,7 +142,7 @@
   <div class="row">
     <div class="col-lg-5 col-sm-12">
       <div class="contact__text">Для расчета стоимости и получения подробной консультации, заполните email, телефон и прикрепите файл с ТЗ, если имеется.</div>
-      <form action="{{ route('feedback.submit') }}" method="post">
+      <form action="{{ route('feedback.submit') }}" method="post" enctype="multipart/form-data">
         @csrf
         <input type="text" data-required="true" data-type="border" name="feedback_name" placeholder="Ваше имя"/>
         <input type="text" data-required="true" data-type="border" name="feedback_phone" placeholder="Номер телефона"/>

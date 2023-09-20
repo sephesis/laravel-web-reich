@@ -17,22 +17,39 @@ $(document).ready(function(){
     $('.js-form-send').on('click', function(event){
         event.preventDefault();
 
-        form = $(this).parent('form');
+        if (typeof window.FormData === 'undefined') {
+            return;
+        }
 
-        $.post(form.attr('action'), form.serialize(), function(response){
-            console.log(response);
-            // alert(data);
-        }).fail(function(error) {
-            if (typeof error.responseJSON.errors !== 'undefined') {
-                errors = error.responseJSON.errors;
-                $.each(errors, function(key, value){
-                    input = $("input[name="+ key +"]");
-                    if (input.attr('data-required') === 'true' && input.attr('type') === 'text') {
-                        $("input[name=" + key + "]").css('border-bottom', '1px solid red');
-                    }else if (input.attr('data-required') === 'true' && input.attr('type') === 'checkbox') {
-                        input.next('.checkbox-button__control').css('border', '1px solid red');
-                    }
-                });
+        form = $(this).parent('form')[0];
+
+        formData = new FormData(form);
+
+        let file = $(this).parent('form').find('input[type="file"]')[0].files[0];
+        formData.append('feedback_file', file);
+        
+        $.ajax({
+            url: $(this).parent('form').attr('action'),
+            method: 'post',
+            data: formData,
+            dataType: 'json',
+            processData: false,
+            contentType: false,
+            success: function(data){
+                //console.dir(data);
+            },
+            error: function (jqXHR, exception) {
+                   if (typeof jqXHR.responseJSON.errors !== 'undefined') {
+                    errors = jqXHR.responseJSON.errors;
+                    $.each(errors, function(key, value){
+                        input = $("input[name="+ key +"]");
+                        if (input.attr('data-required') === 'true' && input.attr('type') === 'text') {
+                            $("input[name=" + key + "]").css('border-bottom', '1px solid red');
+                        }else if (input.attr('data-required') === 'true' && input.attr('type') === 'checkbox') {
+                            input.next('.checkbox-button__control').css('border', '1px solid red');
+                        }
+                    });
+                }
             }
         });
     });
