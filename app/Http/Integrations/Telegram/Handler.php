@@ -28,18 +28,18 @@ class Handler extends WebhookHandler
 
         switch ($type) {
             case 'excel':
-                $generator = new ExcelFileGenerator();
+                $generator = new ExcelFileGenerator(1);
                 $test = $generator->generate();
                 break;
             case 'xml':
-                $generator = new XMLFileGenerator();
+                $generator = new XMLFileGenerator(1);
                 $test = $generator->generate();
                 break;
             case 'text':
                 $test = 'text';
                 break;
         }
-        
+
         Telegraph::message($test)->send();
     }
 

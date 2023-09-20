@@ -2,12 +2,8 @@
 
 namespace App\Resourses\Export;
 
-class ExcelFileGenerator
+class ExcelFileGenerator extends Export
 {
-    public function __construct()
-    {
-        
-    }
 
     public function generate()
     {
