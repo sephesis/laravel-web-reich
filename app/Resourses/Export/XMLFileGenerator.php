@@ -53,8 +53,13 @@ class XMLFileGenerator extends Export
     {
         $xmlWriter->startElement('results');
         foreach ($this->results as $result) {
-                //$this->writeOffer($xmlWriter, $results);
+            $this->writeResult($xmlWriter, $result);
         }
         $xmlWriter->endElement();
+    }
+
+    protected function writeResult(XMLWriter $xmlWriter, $result)
+    {
+
     }
 }
