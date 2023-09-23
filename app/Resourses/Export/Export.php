@@ -13,13 +13,18 @@ class Export
         $this->results = $this->getResults($formId);
     }
 
-    protected function getResults($formId)
+    protected function getResults($formId = 0)
     {
-        $results = FormResult::where('form_id', '=', $formId)->get();
+        if ($formId > 0) {
+            $results = FormResult::where('form_id', '=', $formId)->get();
+        }else{
+            $results = FormResult::all();
+        }
+       
         $data = [];
 
         foreach ($results as $result) {
-            $data['formResults'][$formId][] = json_decode($result['values']);
+            $data[] = json_decode($result['values']);
         }
 
         return $data;

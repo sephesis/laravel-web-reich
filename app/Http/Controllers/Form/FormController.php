@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Form\SendRequest;
 use DefStudio\Telegraph\Facades\Telegraph as Telegraph;
 use Illuminate\Support\Facades\Storage;
+use App\Resourses\Export\ExcelFileGenerator;
 use App\Models\FormResult;
 
 class FormController extends Controller
@@ -19,24 +20,24 @@ class FormController extends Controller
     {
         $data = $request->validated();
 
-        $html = '';
-        $isFileExist = false;
+        $html = $file = '';
+        $isFileUpload = false;
 
         $name = $data['feedback_name'];
         $phone = $data['feedback_phone'];
         $type = $data['feedback_type'];
         $agreement = $data['feedback_privacy'];
 
+
         if (isset($data['feedback_file'])) {
             $file = Storage::disk('local')->put('/files', $data['feedback_file']);
-            $isFileExist = true;
+            $isFileUpload = true;
         }
 
         $service = Service::find($type);
-
         $html = "<strong>Новая заявка на проект</strong>\n" . "Имя: " . $name . "\nТелефон: " . $phone . "\nУслуга: " . $service->title;
 
-        if ($isFileExist) {
+        if ($isFileUpload) {
             if (Storage::disk('local')->exists($file)) {
                 $html .= "\nФайл с тз: Да";
                 Telegraph::document(Storage::path($file))->html($html)->send();
@@ -54,7 +55,7 @@ class FormController extends Controller
             'phone' => $phone,
             'agreement' => $agreement,
             'serviceType' => $type,
-            'file' => $isFileExist ? $file : '',
+            'file' => $isFileUpload ? $file : '',
         ];
 
         $prepared['values'] = json_encode($values);

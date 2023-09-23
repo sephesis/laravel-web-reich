@@ -9,6 +9,7 @@ use DefStudio\Telegraph\Handlers\WebhookHandler;
 use DefStudio\Telegraph\Keyboard\Button;
 use DefStudio\Telegraph\Keyboard\Keyboard;
 use Illuminate\Support\Stringable;
+use Illuminate\Support\Facades\Storage;
 
 class Handler extends WebhookHandler
 {
@@ -29,18 +30,21 @@ class Handler extends WebhookHandler
         switch ($type) {
             case 'excel':
                 $generator = new ExcelFileGenerator(1);
-                $test = $generator->generate();
+                $fileName = 'export_' . md5(date('d-m-y')). '.xlsx';
+                $path = $generator->generate($fileName);
                 break;
             case 'xml':
                 $generator = new XMLFileGenerator(1);
-                $test = $generator->generate();
+                $fileName = 'export_' . md5(date('d-m-y')). '.xml';
+                $path = $generator->generate($fileName);
                 break;
             case 'text':
                 $test = 'text';
                 break;
         }
 
-        Telegraph::message($test)->send();
+        Telegraph::document($path)->send();
+        //Telegraph::message($test)->send();
     }
 
     protected function handleUnknownCommand(Stringable $text): void
