@@ -5,16 +5,17 @@
 @section('content')
 <div class="row">
     <ul class="breadcrumbs">
-      <li class="breadcrumbs__item"> <a class="breadcrumbs__link" href="">Главная</a></li>
+      <li class="breadcrumbs__item"> <a class="breadcrumbs__link" href="#">Главная</a></li>
       <li class="breadcrumbs__item breadcrumbs__item-active">Калькулятор</li>
     </ul>
     <div class="col-lg-8"> 
       <h1 class="h1">{{ $pageTitle }}</h1>
-      <form class="calculator" action="#">
+      <form class="calculator" method="post" action="#">
         <div class="calculator__label">Вид работ:
-          <select>
-            <option>Программирование сайта</option>
-            <option>Веб-дизайн</option>
+          <select name="calculator_services">
+            @foreach ($services as $service)
+              <option value="{{ $service->id }}">{{ $service->title }}</option>
+            @endforeach
           </select>
         </div>
         <div class="calculator__inner calculator__inner_flex">

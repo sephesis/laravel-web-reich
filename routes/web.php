@@ -102,6 +102,12 @@ Route::group(['prefix' => 'admin/groups'], function(){
     Route::post('/{technology-group}/delete', \App\Http\Controllers\TechnologyGroup\DeleteController::class)->name('group.delete');
 });
 
+
+Route::group(['prefix' => 'admin/modules'], function() {
+    Route::get('/create', \App\Http\Controllers\Module\CreateController::class)->name('module.create');
+    Route::post('/', \App\Http\Controllers\Module\StoreController::class)->name('module.store');
+});
+
 Route::group(['prefix' => 'admin/titles'], function(){
     Route::get('/edit', \App\Http\Controllers\Title\EditController::class)->name('title.edit');
     Route::post('/update', \App\Http\Controllers\Title\UpdateController::class)->name('title.update');
@@ -147,6 +153,7 @@ Route::group(['prefix' => 'faq'], function(){
 Route::group(['prefix' => 'sitemap'], function(){
     Route::get('/', App\Http\Controllers\Sitemap\ListController::class)->name('sitemap.list');
 });
+
 
 //Route::group(['prefix' => 'feedback'], function(){
     Route::post('/submit', \App\Http\Controllers\Form\FormController::class)->name('feedback.submit');

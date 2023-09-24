@@ -291,6 +291,25 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-bar-chart"></i>
+              <p>
+               Калькулятор
+              </p>
+              <i class="fas fa-angle-left right"></i>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('module.create') }}" class="nav-link">
+                  <i class="nav-icon far fa-circle"></i>
+                  <p>
+                    Модули
+                  </p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
             <a href="" class="nav-link">
               <i class="nav-icon fa fa-users"></i>
               <p>Пользователи</p>

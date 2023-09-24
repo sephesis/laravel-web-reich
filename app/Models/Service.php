@@ -16,4 +16,9 @@ class Service extends Model
     {
         return $this->belongsTo(Solution::class, 'solution_id', 'id');
     }
+
+    public function modules()
+    {
+        return $this->hasMany(Module::class, 'service_id', 'id');
+    }
 }
