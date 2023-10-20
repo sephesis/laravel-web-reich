@@ -44,7 +44,7 @@
             @endif
             <div class="col-lg-4 mt-4">
                 <a class="project" target="_blank" href="/projects/{{ $project->slug }}"
-                    style="background: url({{ asset('storage/' . $project->img) }})');">
+                    style="background: url({{ asset('storage/images/' . $project->img) }})');">
                     <div class="project__top">
                         <div style="background:{{ $project->color }}" class="project__symbol">
                             {{ mb_substr(mb_strtoupper($project->title), 0, 1) }}</div>

@@ -12,11 +12,12 @@
       <h1 class="h1">{{ $pageTitle }}</h1>
       <form class="calculator" method="post" action="#">
         <div class="calculator__label">Вид работ:
-          <select name="calculator_services">
+          <select name="calculator_services" class="js-calc-services">
             @foreach ($services as $service)
               <option value="{{ $service->id }}">{{ $service->title }}</option>
             @endforeach
           </select>
+          {{-- <input type="hidden" value="{{ route() }}"> --}}
         </div>
         <div class="calculator__inner calculator__inner_flex">
           <div class="calculator__left">
@@ -49,35 +50,9 @@
         </div>
         <div class="calculator__inner">
           <div class="calculator__tab">Модули</div>
-          <div class="calculator__item calculator__item_margin">
-            <label class="checkbox-button">
-              <input class="checkbox-button__input" type="checkbox"/><span class="checkbox-button__control"></span><span class="checkbox-button__label">Наполнение интернет-магазина товарами (Импорт товаров в файле формата XLS, XLSX, CSV)</span>
-            </label>
-          </div>
-          <div class="calculator__item calculator__item_margin">
-            <label class="checkbox-button">
-              <input class="checkbox-button__input" type="checkbox"/><span class="checkbox-button__control"></span><span class="checkbox-button__label">Калькулятор</span>
-            </label>
-          </div>
-          <div class="calculator__item calculator__item_margin">
-            <label class="checkbox-button">
-              <input class="checkbox-button__input" type="checkbox"/><span class="checkbox-button__control"></span><span class="checkbox-button__label">«Избранное»</span>
-            </label>
-          </div>
-          <div class="calculator__item calculator__item_margin">
-            <label class="checkbox-button">
-              <input class="checkbox-button__input" type="checkbox"/><span class="checkbox-button__control"></span><span class="checkbox-button__label">«Сравнение товаров»</span>
-            </label>
-          </div>
-          <div class="calculator__item calculator__item_margin">
-            <label class="checkbox-button">
-              <input class="checkbox-button__input" type="checkbox"/><span class="checkbox-button__control"></span><span class="checkbox-button__label">«Форма для сбора заявок»</span>
-            </label>
-          </div>
-          <div class="calculator__item calculator__item_margin">
-            <label class="checkbox-button">
-              <input class="checkbox-button__input" type="checkbox"/><span class="checkbox-button__control"></span><span class="checkbox-button__label">Другое</span>
-            </label>
+          <div class="calculator__items">
+        
+           
           </div>
         </div>
       </form>

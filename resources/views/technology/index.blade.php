@@ -44,8 +44,8 @@
                         <td>{{ $tech->id }}</td>
                         <td><a href="{{ route('technology.show', $tech->id)}}">{{ $tech->title }}</a></td>
                         <td>{{ $tech->group->title }}</td>
-                        <td><a data-id="{{ $tech->id }}" class="update" href="javascript:void(0);"> Редактировать</a></td>
-                        <td><a data-id="{{ $tech->id }}" data-url="{{ route('technology.delete', $tech->id)}}" class="delete" href="javascript:void(0);">Удалить</a></td>
+                        <td><a data-id="{{ $tech->id }}" class=" btn btn-primary btn-sm update" href="javascript:void(0);"> Редактировать</a></td>
+                        <td><a data-id="{{ $tech->id }}" data-url="{{ route('technology.delete', $tech->id)}}" class="btn btn-danger btn-sm delete" href="javascript:void(0);">Удалить</a></td>
                       </tr>
                       @endforeach
                   

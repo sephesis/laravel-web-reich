@@ -13,6 +13,14 @@ class IndexController
         $pageTitle = PageHelper::getCurrentTitle();
         $services = Service::all();
     
+
+        // foreach ($services as $service) {
+        //     if ($service->id == 7) {
+        //         dd($service->modules);
+        //     }
+            
+        // }
+        //dd($modules);
         return view('calculator.index', compact('pageTitle', 'services'));
     }
 }

@@ -33,7 +33,7 @@
                     <thead>
                     <tr>
                       <th>ID</th>
-                      <th style="width:74%">Название</th>
+                      <th style="width:70%">Название</th>
                     
                       <th></th>
                     </tr>

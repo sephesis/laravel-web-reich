@@ -2,16 +2,13 @@
 
 namespace App\Http\Controllers\Form;
 
-use App\Http\Controllers\Controller;
 use App\Models\Service;
-use Illuminate\Http\Request;
 use App\Http\Requests\Form\SendRequest;
-use DefStudio\Telegraph\Facades\Telegraph as Telegraph;
+use DefStudio\Telegraph\Facades\Telegraph;
 use Illuminate\Support\Facades\Storage;
-use App\Resourses\Export\ExcelFileGenerator;
 use App\Models\FormResult;
 
-class FormController extends Controller
+class FormController extends \App\Http\Controllers\Controller
 {
     /**
      * Handle the incoming request.
@@ -23,19 +20,13 @@ class FormController extends Controller
         $html = $file = '';
         $isFileUpload = false;
 
-        $name = $data['feedback_name'];
-        $phone = $data['feedback_phone'];
-        $type = $data['feedback_type'];
-        $agreement = $data['feedback_privacy'];
-
-
         if (isset($data['feedback_file'])) {
             $file = Storage::disk('local')->put('/files', $data['feedback_file']);
             $isFileUpload = true;
         }
 
-        $service = Service::find($type);
-        $html = "<strong>Новая заявка на проект</strong>\n" . "Имя: " . $name . "\nТелефон: " . $phone . "\nУслуга: " . $service->title;
+        $service = Service::find($data['feedback_type']);
+        $html = "<strong>Новая заявка на проект</strong>\n" . "Имя: " . $data['feedback_name'] . "\nТелефон: " . $data['feedback_phone'] . "\nУслуга: " . $service->title;
 
         if ($isFileUpload) {
             if (Storage::disk('local')->exists($file)) {
@@ -51,10 +42,10 @@ class FormController extends Controller
 
         $values = [
             'success' => true,
-            'name' => $name,
-            'phone' => $phone,
-            'agreement' => $agreement,
-            'serviceType' => $type,
+            'name' => $data['feedback_name'],
+            'phone' => $data['feedback_phone'],
+            'agreement' => $data['feedback_privacy'],
+            'serviceType' => $data['feedback_type'],
             'file' => $isFileUpload ? $file : '',
         ];
 

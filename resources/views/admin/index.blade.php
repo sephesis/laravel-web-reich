@@ -23,7 +23,8 @@
               <!-- small box -->
               <div class="small-box bg-info">
                 <div class="inner">
-                  <h3>{{ $articlesCounter}}</h3>
+                  <h3>19</h3>
+                  {{-- <h3>{{ $articlesCounter}}</h3> --}}
   
                   <p>Новых постов</p>
                 </div>
@@ -38,7 +39,8 @@
               <!-- small box -->
               <div class="small-box bg-success">
                 <div class="inner">
-                  <h3>{{ $tagsCounter }}</h3>
+                  {{-- <h3>{{ $tagsCounter }}</h3> --}}
+                  <h3>9</h3>
   
                   <p>Тегов</p>
                 </div>
@@ -87,7 +89,7 @@
                 <div class="card-header">
                   <h3 class="card-title">
                     <i class="ion ion-clipboard mr-1"></i>
-                    To Do List
+                    Список дел
                   </h3>
   
                   <div class="card-tools">
@@ -115,9 +117,9 @@
                         <label for="todoCheck1"></label>
                       </div>
                       <!-- todo text -->
-                      <span class="text">Design a nice theme</span>
+                      <span class="text">Опубликовать теги</span>
                       <!-- Emphasis label -->
-                      <small class="badge badge-danger"><i class="far fa-clock"></i> 2 mins</small>
+                      <small class="badge badge-danger"><i class="far fa-clock"></i> 2 мин.</small>
                       <!-- General tools such as edit or delete-->
                       <div class="tools">
                         <i class="fas fa-edit"></i>
@@ -133,29 +135,14 @@
                         <input type="checkbox" value="" name="todo2" id="todoCheck2" checked>
                         <label for="todoCheck2"></label>
                       </div>
-                      <span class="text">Make the theme responsive</span>
-                      <small class="badge badge-info"><i class="far fa-clock"></i> 4 hours</small>
+                      <span class="text">Опубликовать статью</span>
+                      <small class="badge badge-info"><i class="far fa-clock"></i> 4 ч.</small>
                       <div class="tools">
                         <i class="fas fa-edit"></i>
                         <i class="fas fa-trash-o"></i>
                       </div>
                     </li>
-                    <li>
-                      <span class="handle">
-                        <i class="fas fa-ellipsis-v"></i>
-                        <i class="fas fa-ellipsis-v"></i>
-                      </span>
-                      <div  class="icheck-primary d-inline ml-2">
-                        <input type="checkbox" value="" name="todo3" id="todoCheck3">
-                        <label for="todoCheck3"></label>
-                      </div>
-                      <span class="text">Let theme shine like a star</span>
-                      <small class="badge badge-warning"><i class="far fa-clock"></i> 1 day</small>
-                      <div class="tools">
-                        <i class="fas fa-edit"></i>
-                        <i class="fas fa-trash-o"></i>
-                      </div>
-                    </li>
+                   
                     <li>
                       <span class="handle">
                         <i class="fas fa-ellipsis-v"></i>
@@ -165,40 +152,8 @@
                         <input type="checkbox" value="" name="todo4" id="todoCheck4">
                         <label for="todoCheck4"></label>
                       </div>
-                      <span class="text">Let theme shine like a star</span>
-                      <small class="badge badge-success"><i class="far fa-clock"></i> 3 days</small>
-                      <div class="tools">
-                        <i class="fas fa-edit"></i>
-                        <i class="fas fa-trash-o"></i>
-                      </div>
-                    </li>
-                    <li>
-                      <span class="handle">
-                        <i class="fas fa-ellipsis-v"></i>
-                        <i class="fas fa-ellipsis-v"></i>
-                      </span>
-                      <div  class="icheck-primary d-inline ml-2">
-                        <input type="checkbox" value="" name="todo5" id="todoCheck5">
-                        <label for="todoCheck5"></label>
-                      </div>
-                      <span class="text">Check your messages and notifications</span>
-                      <small class="badge badge-primary"><i class="far fa-clock"></i> 1 week</small>
-                      <div class="tools">
-                        <i class="fas fa-edit"></i>
-                        <i class="fas fa-trash-o"></i>
-                      </div>
-                    </li>
-                    <li>
-                      <span class="handle">
-                        <i class="fas fa-ellipsis-v"></i>
-                        <i class="fas fa-ellipsis-v"></i>
-                      </span>
-                      <div  class="icheck-primary d-inline ml-2">
-                        <input type="checkbox" value="" name="todo6" id="todoCheck6">
-                        <label for="todoCheck6"></label>
-                      </div>
-                      <span class="text">Let theme shine like a star</span>
-                      <small class="badge badge-secondary"><i class="far fa-clock"></i> 1 month</small>
+                      <span class="text">Дать обратную связь клиенту (+7-926-092-44-00)</span>
+                      <small class="badge badge-success"><i class="far fa-clock"></i> 1 день</small>
                       <div class="tools">
                         <i class="fas fa-edit"></i>
                         <i class="fas fa-trash-o"></i>
@@ -208,7 +163,7 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer clearfix">
-                  <button type="button" class="btn btn-primary float-right"><i class="fas fa-plus"></i> Add item</button>
+                  <button type="button" class="btn btn-primary float-right"><i class="fas fa-plus"></i> Добавить запись</button>
                 </div>
               </div>
             </div>
@@ -217,7 +172,7 @@
             <div class="card-header border-0">
               <h3 class="card-title">
                 <i class="fas fa-map-marker-alt mr-1"></i>
-                Visitors
+                Посетители сайта
               </h3>
               <!-- card tools -->
               <div class="card-tools">
@@ -236,17 +191,17 @@
             <!-- /.card-body-->
             <div class="card-footer bg-transparent">
               <div class="row">
-                <div class="col-4 text-center">
+                <div class="col-6 text-center">
                   <div id="sparkline-1"></div>
-                  <div class="text-white">Visitors</div>
+                  <div class="text-white">Посетители</div>
                 </div>
                 <!-- ./col -->
-                <div class="col-4 text-center">
+                <div class="col-6 text-center">
                   <div id="sparkline-2"></div>
-                  <div class="text-white">Online</div>
+                  <div class="text-white">Онлайн</div>
                 </div>
                 <!-- ./col -->
-                <div class="col-4 text-center">
+                <div class="col-4 text-center d-none">
                   <div id="sparkline-3"></div>
                   <div class="text-white">Sales</div>
                 </div>

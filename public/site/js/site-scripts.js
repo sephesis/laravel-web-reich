@@ -14,6 +14,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 $(document).ready(function(){
+
+
+    //id выбранной услуги в калькуляторе
+    selectedOption = $('.js-calc-services').val();
+
+    //$.post()
+
+
     $('.js-form-send').on('click', function(event){
         event.preventDefault();
 
